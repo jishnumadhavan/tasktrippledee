@@ -23,41 +23,56 @@ class _ProfileInfoState extends State<ProfileInfo> {
   @override
   Widget build(BuildContext context) {
     return Consumer<ProfileInfoController>(builder: (context, provider, child) {
-      return Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-          Container(
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              border: Border.all(color: Colors.grey, width: 4)
-            ),
-            child: Container(
-            width: 50,
-            height: 50,
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              image: DecorationImage(
-                image: NetworkImage(provider.UserData['avatar']),
-                fit: BoxFit.cover,
-              ),
-            ),
+      if (provider.UserData.isNotEmpty) {
+        return Container(
+          padding: EdgeInsets.all(5),
+          height: 80,
+          child: Center(
+            child: Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        border: Border.all(color: Colors.grey, width: 4)
                     ),
-          ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DisplayName(
-              firstName: provider.UserData['first_name'],
-              secondName: provider.UserData['last_name'],
-            ),
-            SizedBox(height: 8),
-            Text(provider.UserData['email']),
+                    child: Center(
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          image: DecorationImage(
+                            image: NetworkImage(provider.UserData['avatar']),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 15),
+                  Column(
+                    // crossAxisAlignment: CrossAxisAlignment.start,
+                    // mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      DisplayName(
+                        firstName: provider.UserData['first_name'],
+                        secondName: provider.UserData['last_name'],
+                      ),
+                      SizedBox(height: 5),
+                      Text(provider.UserData['email']),
 
-          ],
-        )
-      ]);
-    });
+                    ],
+                  )
+                ]),
+          ),
+        );
+      }
+      else {
+        return Text("Loading");
+      }
+    }
+    );
   }
 }

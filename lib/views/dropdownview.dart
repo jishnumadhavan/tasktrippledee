@@ -25,10 +25,9 @@ class _DropDownViewState extends State<DropDownView> {
             CountrySelection(),
             DisplayName(firstName: 'Jishnu', secondName: 'Madhavan',prefix: "MR",suffix: "Jr",),
             ElevatedButton(onPressed: (){
-              Provider.of<ProfileInfoController>(context, listen: false).fetchUserData(2);
-
-            }, child: Text("Press")),
-            ProfileInfo(userId: 3,),
+              Navigator.pushNamed(context, '/user');
+            }, child: Text("Display user")),
+            // ProfileInfo(userId: 3,),
           ],
         )),
     );

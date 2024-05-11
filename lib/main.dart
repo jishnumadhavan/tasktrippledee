@@ -4,6 +4,7 @@ import 'package:task_trippldee/controllers/countryselectioncontroller.dart';
 import 'package:task_trippldee/controllers/dropdowncontroller.dart';
 import 'package:task_trippldee/controllers/profileinfocontroller.dart';
 import 'package:task_trippldee/views/dropdownview.dart';
+import 'package:task_trippldee/views/profileview.dart';
 
 
 void main(){
@@ -24,7 +25,12 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Task Trippldee',
-          home: DropDownView(),
+          initialRoute: '/',
+          routes: {
+            '/': (context) => DropDownView(),
+            '/user': (context) => ShowProfileView(UserId: 2,),
+          },
+          // home: DropDownView(),
         ),
       ),
     );

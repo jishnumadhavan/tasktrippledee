@@ -8,9 +8,10 @@ class ProfileInfoController with ChangeNotifier {
     var dio= Dio();
     try{
       print("in try");
-      Response response= await dio.get("https://reqres.in/api/users/2");
+      Response response= await dio.get("https://reqres.in/api/users/$UserId");
       print("response is ${response.data}");
       UserData= response.data['data'];
+      notifyListeners();
       print("userdata is ${UserData['id']}");
     }
     catch(e){
