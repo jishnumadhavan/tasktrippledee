@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../controllers/profileinfocontroller.dart';
 import '../widgets/countryselection.dart';
 import '../widgets/displayname.dart';
 import '../widgets/dropdownbutton.dart';
-import '../widgets/profileinfo.dart';
 
 class DropDownView extends StatefulWidget {
   const DropDownView({Key? key}) : super(key: key);

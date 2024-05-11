@@ -53,8 +53,6 @@ class _ProfileInfoState extends State<ProfileInfo> {
                   ),
                   SizedBox(width: 15),
                   Column(
-                    // crossAxisAlignment: CrossAxisAlignment.start,
-                    // mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       DisplayName(
                         firstName: provider.UserData['first_name'],
