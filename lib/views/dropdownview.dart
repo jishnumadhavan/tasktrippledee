@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/countryselection.dart';
 import '../widgets/dropdownbutton.dart';
 
 class DropDownView extends StatefulWidget {
@@ -13,7 +14,13 @@ class _DropDownViewState extends State<DropDownView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(child: DropdownWidget()),
+        body: Center(child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            DropdownWidget(),
+            CountrySelection()
+          ],
+        )),
     );
   }
 }
