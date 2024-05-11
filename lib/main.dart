@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           initialRoute: '/',
           routes: {
             '/': (context) => DropDownView(),
-            '/user': (context) => ShowProfileView(UserId: 2,),
+            '/user': (context) => ShowProfileView(UserId: 1,),
           },
           // home: DropDownView(),
         ),

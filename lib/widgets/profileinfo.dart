@@ -69,8 +69,11 @@ class _ProfileInfoState extends State<ProfileInfo> {
           ),
         );
       }
+      else if (provider.errormessage != ""){
+        return Center(child: Text(provider.errormessage));
+      }
       else {
-        return Text("Loading");
+        return Center(child: Text("Loading"));
       }
     }
     );
