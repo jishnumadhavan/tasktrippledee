@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:task_trippldee/controllers/countryselectioncontroller.dart';
 import 'package:task_trippldee/controllers/dropdowncontroller.dart';
+import 'package:task_trippldee/controllers/profileinfocontroller.dart';
 import 'package:task_trippldee/views/dropdownview.dart';
 
 
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => DropDownController()),
-        ChangeNotifierProvider(create: (context) => CountrySelectionController())
+        ChangeNotifierProvider(create: (context) => CountrySelectionController()),
+        ChangeNotifierProvider(create: (context) => ProfileInfoController())
       ],
       child: GestureDetector(
         child: MaterialApp(
