@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/countryselection.dart';
+import '../widgets/displayname.dart';
 import '../widgets/dropdownbutton.dart';
 
 class DropDownView extends StatefulWidget {
@@ -18,7 +19,8 @@ class _DropDownViewState extends State<DropDownView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             DropdownWidget(),
-            CountrySelection()
+            CountrySelection(),
+            DisplayName(firstName: 'Jishnu', secondName: 'Madhavan',prefix: "MR",suffix: "Jr",)
           ],
         )),
     );
